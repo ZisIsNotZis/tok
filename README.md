@@ -17,15 +17,14 @@ overflows, *shrink the grams* (drop the tail, or halve them) by the lowest
 `len × count` score, then re-merge — an approximation of the standard BPE merge
 loop implemented with priority queues. It is not a library and has no consumers.
 
-**How to run:** there is no build system, no single entrypoint and no README in
-the directory; each file is an independent `main`.
+**How to run:** there is no build system or single entrypoint; each C++ file is an independent `main`.
 ```
 g++ -O2 -pthread -o /tmp/tok tok.cpp && /tmp/tok <corpus> <ngram> <target_vocab> <max_working_set>
 g++ -O2 -pthread -o /tmp/uni unigram.cpp && /tmp/uni <gram> <vocab> <vocabMax> <corpus>
 nvcc -O2 -o /tmp/uni_cu unigram.cu && /tmp/uni_cu <gram> <vocab> <vocabMax> <vocabCap> <block> <threads> <corpus>
 ```
 `tok5.cpp` uses a subcommand interface (`count` / `reduce`) and is **not
-buildable as committed** (see Substance below). Notebook order:
+buildable as committed**. Notebook order:
 `tok.ipynb` (byte-level + HF BPE baseline), `tok1.ipynb`/`tok2.ipynb` (gram
 counting and heap reduction in NumPy), `tok3.ipynb` (turn grams + merges into a
 `tokenizers` JSON), `tok4.ipynb` (pure-Python prototype of the same reduce/count/
@@ -42,5 +41,4 @@ partly broken scratch archive, so treat it as
 `deprecated (2025 era) — kept as an archive entry` in tone and as
 `archive_only` for migration.
 
-**License:** no LICENSE file present. As the owner's own work, add an explicit
-license (e.g. MIT) before publishing; until then, all rights reserved.
+**License:** the repository's own code is licensed under [AGPL-3.0-only](LICENSE).
