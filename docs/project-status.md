@@ -7,7 +7,7 @@ inspectable instead of rotting. Copied — the original was not modified.
 
 ## Status
 
-See `README.md` for what it is and an honest status line (`deprecated (<year> era)
+See [`README.md`](../README.md) for what it is and an honest status line (`deprecated (<year> era)
 - kept as an archive` where applicable).
 
 ## Evidence
