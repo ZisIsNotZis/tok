@@ -9,3 +9,15 @@ node_modules/
 !.env.example
 .DS_Store
 *.o
+
+# editor / OS junk
+*~
+*.swp
+.#*
+.idea/
+.vscode/
+
+# build output
+a.out
+build/
+dist/
